@@ -41,7 +41,7 @@ QDRANT_HOST = os.environ.get("QDRANT_HOST", "localhost")
 QDRANT_PORT = int(os.environ.get("QDRANT_PORT", "6333"))
 
 # Embedding model (same as ingestion)
-EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
 
 # Retrieval parameters
 DEFAULT_LIMIT = 100  # Top-k candidates to return

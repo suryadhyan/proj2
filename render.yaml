@@ -3,8 +3,8 @@ services:
   - type: web
     name: matching-api
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt && python download_model.py
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
     envVars:
       - key: SUPABASE_URL
         sync: false

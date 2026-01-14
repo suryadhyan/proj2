@@ -42,9 +42,15 @@ SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 QDRANT_HOST = os.environ.get("QDRANT_HOST", "localhost")
 QDRANT_PORT = int(os.environ.get("QDRANT_PORT", "6333"))
 
-# Embedding model (1024D)
-EMBEDDING_MODEL = "BAAI/bge-large-en-v1.5"  # 1024-dimensional embeddings
-EMBEDDING_DIM = 1024
+# Embedding model
+# Default to a smaller model for safety in cloud environments (avoid OOM)
+# Can be overridden by env var to use "BAAI/bge-large-en-v1.5" if resources permit
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "all-MiniLM-L6-v2") 
+
+# Dimension depends on model:
+# - BAAI/bge-large-en-v1.5: 1024
+# - all-MiniLM-L6-v2: 384
+EMBEDDING_DIM = 1024 if "large" in EMBEDDING_MODEL else 384
 
 
 # ============================================================================

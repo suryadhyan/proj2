@@ -8,6 +8,17 @@ import uuid
 from schema_normalizer_v2 import normalize_and_validate_v2
 from ingestion_pipeline import IngestionClients, ingest_listing
 from retrieval_service import RetrievalClients, retrieve_candidates
+import asyncio
+from fastapi import FastAPI, HTTPException, BackgroundTasks
+from pydantic import BaseModel
+from typing import Dict, Any, List, Optional
+import os
+import uuid
+
+# Import project modules
+from schema_normalizer_v2 import normalize_and_validate_v2
+from ingestion_pipeline import IngestionClients, ingest_listing
+from retrieval_service import RetrievalClients, retrieve_candidates
 from listing_matcher_v2 import listing_matches_v2
 from embedding_builder import build_embedding_text
 import numpy as np
@@ -17,35 +28,50 @@ app = FastAPI(title="Vriddhi Matching Engine API", version="2.0")
 # Global clients
 ingestion_clients = IngestionClients()
 retrieval_clients = RetrievalClients()
+is_initialized = False
+init_error = None
+
+async def initialize_services():
+    """Run initialization in a background thread to allow instant server startup."""
+    global is_initialized, init_error
+    print("⏳ Starting background initialization...")
+    try:
+        if os.environ.get("SUPABASE_URL"):
+            # Run blocking init calls in a separate thread
+            await asyncio.to_thread(ingestion_clients.initialize)
+            await asyncio.to_thread(retrieval_clients.initialize)
+            is_initialized = True
+            print("✅ Clients initialized successfully in background")
+        else:
+            print("⚠️ Warning: SUPABASE_URL not set. Clients not initialized.")
+    except Exception as e:
+        init_error = str(e)
+        print(f"❌ Error initializing clients: {e}")
+
+@app.on_event("startup")
+async def startup_event():
+    # Start initialization as a background task
+    asyncio.create_task(initialize_services())
+
+def check_service_health():
+    """Helper to check if services are ready."""
+    if init_error:
+        raise HTTPException(status_code=500, detail=f"Service initialization failed: {init_error}")
+    if not is_initialized:
+        raise HTTPException(status_code=503, detail="Service is still starting up (loading models). Please try again in 30 seconds.")
 
 def semantic_implies(candidate_val: str, required_val: str) -> bool:
     """
     Check if candidate_val semantically implies required_val using embeddings.
-    Threshold of 0.82 indicates high semantic similarity.
     """
     if not ingestion_clients.embedding_model:
         return candidate_val.lower() == required_val.lower()
         
-    # Generate embeddings for both terms
     v1 = ingestion_clients.embedding_model.encode(candidate_val)
     v2 = ingestion_clients.embedding_model.encode(required_val)
     
-    # Cosine similarity
     sim = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
     return float(sim) > 0.82
-
-@app.on_event("startup")
-async def startup_event():
-    # Initialize clients on startup if env vars are present
-    try:
-        if os.environ.get("SUPABASE_URL"):
-            ingestion_clients.initialize()
-            retrieval_clients.initialize()
-            print("Clients initialized successfully")
-        else:
-            print("Warning: SUPABASE_URL not set. Clients not initialized.")
-    except Exception as e:
-        print(f"Error initializing clients: {e}")
 
 class ListingRequest(BaseModel):
     listing: Dict[str, Any]
@@ -56,23 +82,25 @@ class MatchRequest(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"status": "online", "service": "Vriddhi Matching Engine V2"}
+    return {
+        "status": "online", 
+        "initialized": is_initialized, 
+        "service": "Vriddhi Matching Engine V2"
+    }
+
+@app.get("/health")
+def health_check():
+    """Simple health check for Render"""
+    return {"status": "ok"}
 
 @app.post("/ingest")
 async def ingest_endpoint(request: ListingRequest):
-    """
-    Ingest a NEW schema listing.
-    1. Normalize to OLD format
-    2. Ingest to Supabase + Qdrant
-    """
+    check_service_health()
     try:
         # 1. Normalize
         listing_old = normalize_and_validate_v2(request.listing)
         
         # 2. Ingest
-        if not ingestion_clients.supabase:
-             raise HTTPException(status_code=503, detail="Ingestion service not initialized (check env vars)")
-             
         listing_id, _ = ingest_listing(ingestion_clients, listing_old, verbose=True)
         
         return {
@@ -87,19 +115,12 @@ async def ingest_endpoint(request: ListingRequest):
 
 @app.post("/search")
 async def search_endpoint(request: ListingRequest, limit: int = 10):
-    """
-    Search for candidates using a NEW schema listing as query.
-    1. Normalize to OLD format
-    2. Retrieve candidates from Qdrant/Supabase
-    """
+    check_service_health()
     try:
         # 1. Normalize
         listing_old = normalize_and_validate_v2(request.listing)
         
         # 2. Retrieve
-        if not retrieval_clients.qdrant:
-             raise HTTPException(status_code=503, detail="Retrieval service not initialized (check env vars)")
-
         candidate_ids = retrieve_candidates(retrieval_clients, listing_old, limit=limit, verbose=True)
         
         return {
@@ -114,11 +135,7 @@ async def search_endpoint(request: ListingRequest, limit: int = 10):
 
 @app.post("/match")
 async def match_endpoint(request: MatchRequest):
-    """
-    Check if two NEW schema listings match.
-    1. Normalize both
-    2. Run boolean matching logic with semantic implication
-    """
+    check_service_health()
     try:
         # 1. Normalize
         listing_a_old = normalize_and_validate_v2(request.listing_a)
@@ -136,6 +153,14 @@ async def match_endpoint(request: MatchRequest):
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/normalize")
+async def normalize_endpoint(request: ListingRequest):
+    try:
+        listing_old = normalize_and_validate_v2(request.listing)
+        return {"status": "success", "normalized_listing": listing_old}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 
 @app.post("/normalize")

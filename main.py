@@ -10,6 +10,7 @@ from ingestion_pipeline import IngestionClients, ingest_listing
 from retrieval_service import RetrievalClients, retrieve_candidates
 from listing_matcher_v2 import listing_matches_v2
 from embedding_builder import build_embedding_text
+import numpy as np
 
 app = FastAPI(title="Vriddhi Matching Engine API", version="2.0")
 
@@ -17,10 +18,25 @@ app = FastAPI(title="Vriddhi Matching Engine API", version="2.0")
 ingestion_clients = IngestionClients()
 retrieval_clients = RetrievalClients()
 
+def semantic_implies(candidate_val: str, required_val: str) -> bool:
+    """
+    Check if candidate_val semantically implies required_val using embeddings.
+    Threshold of 0.82 indicates high semantic similarity.
+    """
+    if not ingestion_clients.embedding_model:
+        return candidate_val.lower() == required_val.lower()
+        
+    # Generate embeddings for both terms
+    v1 = ingestion_clients.embedding_model.encode(candidate_val)
+    v2 = ingestion_clients.embedding_model.encode(required_val)
+    
+    # Cosine similarity
+    sim = np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2))
+    return float(sim) > 0.82
+
 @app.on_event("startup")
 async def startup_event():
     # Initialize clients on startup if env vars are present
-    # We use try-except to allow building the container without env vars (they might be set at runtime)
     try:
         if os.environ.get("SUPABASE_URL"):
             ingestion_clients.initialize()
@@ -101,25 +117,26 @@ async def match_endpoint(request: MatchRequest):
     """
     Check if two NEW schema listings match.
     1. Normalize both
-    2. Run boolean matching logic
+    2. Run boolean matching logic with semantic implication
     """
     try:
         # 1. Normalize
         listing_a_old = normalize_and_validate_v2(request.listing_a)
         listing_b_old = normalize_and_validate_v2(request.listing_b)
         
-        # 2. Match
-        is_match = listing_matches_v2(listing_a_old, listing_b_old)
+        # 2. Match with semantic implication
+        is_match = listing_matches_v2(listing_a_old, listing_b_old, implies_fn=semantic_implies)
         
         return {
             "status": "success",
             "match": is_match,
-            "details": "Match successful" if is_match else "No match found"
+            "details": "Semantic match successful" if is_match else "No match found"
         }
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @app.post("/normalize")
 async def normalize_endpoint(request: ListingRequest):

@@ -1,0 +1,11 @@
+# Railway Configuration
+[build]
+builder = "nixpacks"
+# Nixpacks will automatically detect Python and requirements.txt
+
+[deploy]
+startCommand = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+healthcheckPath = "/"
+healthcheckTimeout = 100
+restartPolicyType = "on-failure"
+maxRestartCount = 5

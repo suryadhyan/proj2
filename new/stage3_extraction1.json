@@ -1,0 +1,311 @@
+[
+  {
+    "query": "looking for a used macbook pro with at least 16gb ram under 80k",
+    "intent": "product",
+    "subintent": "buy",
+    "domain": ["Technology & Electronics"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "laptop",
+        "categorical": {
+          "condition": "used",
+          "brand": "apple",
+          "model": "macbook pro"
+        },
+        "min": {
+          "capacity": [{ "type": "memory", "value": 16, "unit": "gb" }]
+        },
+        "max": {
+          "cost": [{ "type": "price", "value": 80000, "unit": "inr" }]
+        },
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a product purchase for a laptop. MacBook Pro was canonicalized to laptop with brand apple and model macbook pro. Condition used extracted from 'used'. RAM requirement 'at least 16gb' indicates minimum constraint on capacity axis. Budget 'under 80k' indicates maximum price constraint. No location specified, defaulting to near_me."
+  },
+  {
+    "query": "selling my old royal enfield classic 350, single owner, 15000km done",
+    "intent": "product",
+    "subintent": "sell",
+    "domain": ["Automotive & Vehicles"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "motorcycle",
+        "categorical": {
+          "brand": "royal enfield",
+          "model": "classic 350",
+          "condition": "used",
+          "ownership": "single"
+        },
+        "min": {},
+        "max": {},
+        "range": {
+          "performance": [{ "type": "odometer", "min": 15000, "max": 15000, "unit": "km" }]
+        }
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a product sale for a motorcycle. Brand royal enfield and model classic 350 extracted as categorical. Single owner implies condition used plus ownership single per implication rule. Odometer reading 15000km stated as exact value (no modifier). No location specified, defaulting to near_me."
+  },
+  {
+    "query": "need a kannada speaking plumber urgently in jayanagar",
+    "intent": "service",
+    "subintent": "seek",
+    "domain": ["Construction & Trades"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "plumbing",
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {
+      "categorical": {
+        "language": "kannada"
+      },
+      "min": {},
+      "max": {},
+      "range": {}
+    },
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {
+      "name": "jayanagar"
+    },
+    "location_match_mode": "explicit",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a service request for plumbing. Kannada speaking is a preference about the service provider, extracted to other_party_preferences. Location jayanagar explicitly mentioned, setting mode to explicit. Urgency is not a structured attribute and was not extracted."
+  },
+  {
+    "query": "i'm a graphic designer with 5 years experience, available for freelance work",
+    "intent": "service",
+    "subintent": "provide",
+    "domain": ["Marketing, Advertising & Design"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "graphic design",
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {
+      "categorical": {
+        "profession": "graphic designer"
+      },
+      "min": {},
+      "max": {},
+      "range": {
+        "time": [{ "type": "experience", "min": 60, "max": 60, "unit": "months" }]
+      }
+    },
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a service provision for graphic design. User describes themselves as graphic designer with 5 years experience, extracted to self_attributes. Experience normalized to 60 months as exact value. No location specified, defaulting to near_me."
+  },
+  {
+    "query": "anyone up for weekend treks around bangalore?",
+    "intent": "mutual",
+    "subintent": "connect",
+    "domain": ["Sports & Outdoors"],
+    "primary_mutual_category": ["Adventure"],
+    "items": [
+      {
+        "type": "trekking",
+        "categorical": {
+          "schedule": "weekend"
+        },
+        "min": {},
+        "max": {},
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {
+      "name": "bangalore"
+    },
+    "location_match_mode": "explicit",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a mutual connection for adventure activities. Trekking extracted as the activity type with weekend schedule as categorical attribute. Location bangalore explicitly mentioned with 'around bangalore', setting mode to explicit."
+  },
+  {
+    "query": "2bhk furnished flat wanted in koramangala, prefer non-smoker flatmates",
+    "intent": "mutual",
+    "subintent": "connect",
+    "domain": ["Real Estate & Property"],
+    "primary_mutual_category": ["Roommates"],
+    "items": [
+      {
+        "type": "apartment",
+        "categorical": {
+          "configuration": "2bhk",
+          "furnishing": "furnished"
+        },
+        "min": {},
+        "max": {},
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {
+      "categorical": {
+        "smoking": "no"
+      },
+      "min": {},
+      "max": {},
+      "range": {}
+    },
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {
+      "name": "koramangala"
+    },
+    "location_match_mode": "explicit",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a mutual roommate search. Apartment extracted with 2bhk configuration and furnished status as categorical attributes. Non-smoker preference for flatmates extracted to other_party_preferences with smoking flag set to no. Location koramangala explicitly mentioned."
+  },
+  {
+    "query": "giving away my old sofa, need gone by this weekend",
+    "intent": "product",
+    "subintent": "sell",
+    "domain": ["Home & Furniture"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "sofa",
+        "categorical": {
+          "condition": "used"
+        },
+        "min": {},
+        "max": {},
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a product sale for a sofa. Condition used extracted from 'old'. Giving away implies free but no explicit price stated, so cost not extracted. Timeline urgency not a structured attribute. No location specified, defaulting to near_me."
+  },
+  {
+    "query": "can someone teach my kid math? class 10 cbse board",
+    "intent": "service",
+    "subintent": "seek",
+    "domain": ["Education & Training"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "tutoring",
+        "categorical": {
+          "subject": "mathematics",
+          "level": "class 10",
+          "board": "cbse"
+        },
+        "min": {},
+        "max": {},
+        "range": {}
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a service request for tutoring. Subject mathematics extracted from 'math'. Level class 10 and board cbse extracted as categorical attributes specifying the curriculum. No location specified, defaulting to near_me."
+  },
+  {
+    "query": "software developer looking for cofounder to build an edtech startup",
+    "intent": "mutual",
+    "subintent": "connect",
+    "domain": ["Business Services & Consulting"],
+    "primary_mutual_category": ["Professional"],
+    "items": [],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {
+      "categorical": {
+        "profession": "software developer"
+      },
+      "min": {},
+      "max": {},
+      "range": {}
+    },
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a mutual professional connection seeking a cofounder. User self-identifies as software developer, extracted to self_attributes. The subject is edtech startup cofounder search which is a symmetric relationship. Items empty as mutual connections focus on person-to-person matching. No location specified, defaulting to near_me."
+  },
+  {
+    "query": "iphone 14 pro max 256gb",
+    "intent": "product",
+    "subintent": "buy",
+    "domain": ["Technology & Electronics"],
+    "primary_mutual_category": [],
+    "items": [
+      {
+        "type": "smartphone",
+        "categorical": {
+          "brand": "apple",
+          "model": "iphone 14 pro max"
+        },
+        "min": {},
+        "max": {},
+        "range": {
+          "capacity": [{ "type": "storage", "min": 256, "max": 256, "unit": "gb" }]
+        }
+      }
+    ],
+    "item_exclusions": [],
+    "other_party_preferences": {},
+    "other_party_exclusions": {},
+    "self_attributes": {},
+    "self_exclusions": {},
+    "target_location": {},
+    "location_match_mode": "near_me",
+    "location_exclusions": [],
+    "reasoning": "The query was classified as a product purchase for a smartphone. iPhone canonicalized to smartphone with brand apple and model iphone 14 pro max. Storage 256gb stated without modifier, treated as exact value using range with min=max. No location specified, defaulting to near_me."
+  }
+]

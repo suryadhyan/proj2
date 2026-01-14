@@ -1,0 +1,29 @@
+services:
+  # 1. FastAPI Web Service
+  - type: web
+    name: matching-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false
+      - key: QDRANT_HOST
+        value: qdrant  # Connects to the private service below
+      - key: QDRANT_PORT
+        value: 6333
+      - key: PYTHON_VERSION
+        value: 3.10.0
+
+  # 2. Qdrant Vector Database (Private Service)
+  - type: pvt
+    name: qdrant
+    env: docker
+    dockerContext: .
+    dockerfilePath: qdrant.Dockerfile # We'll create this to use the official image
+    disk:
+      name: qdrant-data
+      mountPath: /qdrant/storage
+      sizeGB: 1

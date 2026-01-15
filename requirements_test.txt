@@ -1,0 +1,12 @@
+# Testing dependencies for API extraction
+openai>=1.0.0
+python-dotenv>=1.0.0
+
+# Existing dependencies (for reference)
+# fastapi
+# uvicorn
+# supabase
+# qdrant-client
+# sentence-transformers
+# numpy
+# pydantic

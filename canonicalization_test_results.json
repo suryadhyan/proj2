@@ -1,0 +1,1179 @@
+{
+  "Test 1: Phone Synonyms": [
+    {
+      "query": "looking for a phone under 30k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. A smartphone was extracted as the item type based on the term 'phone,' and a maximum price constraint of 30,000 was extracted from the stated budget. No location was explicitly mentioned, so local matching applies."
+      }
+    },
+    {
+      "query": "need a mobile under 30k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. 'Mobile' was interpreted as 'smartphone' based on market terminology. A maximum price constraint of 30,000 was extracted from the query. No location was explicitly mentioned, so the default location match mode 'near_me' was applied."
+      }
+    },
+    {
+      "query": "want to buy a cellphone under 30k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "categorical": {},
+            "min": {},
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+                }
+              ]
+            },
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user explicitly mentioned wanting to buy a tangible item. The item type was identified as a smartphone based on the term 'cellphone'. A maximum price constraint of 30,000 was extracted from the query. No specific location or other preferences were mentioned, so the default location match mode 'near_me' was applied."
+      }
+    },
+    {
+      "query": "searching for a smartphone under 30k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is searching for a tangible item, specifically a smartphone. The subintent was identified as 'buy' since the user is looking to acquire the item. The domain was assigned as 'technology & electronics' based on the nature of the product. A maximum price constraint of 30,000 was extracted from the query and normalized to the local currency. No location or other preferences were mentioned, so the default location match mode 'near_me' was applied."
+      }
+    }
+  ],
+  "Test 2: Laptop Synonyms": [
+    {
+      "query": "selling my laptop",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user explicitly mentioned selling a tangible item. The item type 'laptop' was extracted as it is directly stated in the query. No additional attributes, constraints, or location details were provided, so default local matching applies."
+      }
+    },
+    {
+      "query": "selling my notebook",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sell intent because the user is offering to sell a tangible item. The term 'notebook' was interpreted as a synonym for 'laptop' based on common usage in the technology domain. No specific attributes, constraints, or location details were mentioned, so default values were applied."
+      }
+    },
+    {
+      "query": "selling my portable computer",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user explicitly mentioned selling a tangible item. The term 'portable computer' was semantically understood and standardized to 'laptop' as the item type. No additional attributes, constraints, or location details were provided, so default local matching applies."
+      }
+    }
+  ],
+  "Test 3: Condition Synonyms": [
+    {
+      "query": "used iphone for sale",
+      "result": null
+    },
+    {
+      "query": "second hand iphone for sale",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "categorical": {
+              "condition": "used",
+              "brand": "apple"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user is offering a tangible item for sale. The item type was identified as a smartphone, with the brand extracted as Apple and the condition marked as used based on the term 'second hand'. No specific location or additional constraints were mentioned, so the default location match mode is set to 'near_me'."
+      }
+    },
+    {
+      "query": "pre-owned iphone for sale",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "categorical": {
+              "condition": "used",
+              "brand": "apple"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user is offering a tangible item for sale. The item was identified as a smartphone with the brand Apple, and the condition was extracted as used based on the term 'pre-owned'. No specific location or additional constraints were mentioned, so the default location match mode is set to 'near_me'."
+      }
+    },
+    {
+      "query": "2nd hand iphone for sale",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "categorical": {
+              "condition": "used",
+              "brand": "apple"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user is offering a tangible item for sale. The item type was identified as a smartphone, with the brand specified as Apple and the condition marked as used based on the term '2nd hand'. No location or additional constraints were mentioned, so the default location match mode is set to 'near_me'."
+      }
+    }
+  ],
+  "Test 4: 'Language' Polysemy - Programming": [
+    {
+      "query": "need a developer who knows Python language",
+      "result": {
+        "intent": "service",
+        "subintent": "seek",
+        "domain": [
+          "education & training"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "developer",
+            "categorical": {
+              "skill": "python"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a service request because the user is seeking professional assistance. The type of service was identified as 'developer,' and the skill requirement for Python was extracted as a categorical attribute. No specific location or additional constraints were mentioned, so the default location match mode is set to 'near_me.'"
+      }
+    },
+    {
+      "query": "looking for software engineer with Rust language experience",
+      "result": {
+        "intent": "service",
+        "subintent": "seek",
+        "domain": [
+          "business services & consulting"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "software engineering",
+            "categorical": {
+              "language": "rust"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {
+            "profession": "software engineer"
+          },
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a service request because the user is seeking professional assistance. 'Software engineering' was extracted as the service type, with 'Rust' identified as a required skill based on the explicit mention of language experience. The profession 'software engineer' was captured as a preference for the other party. No specific location or additional constraints were mentioned, so proximity-based matching applies."
+      }
+    }
+  ],
+  "Test 5: 'Language' Polysemy - Speaking": [
+    {
+      "query": "need a plumber who speaks Kannada language",
+      "result": {
+        "intent": "service",
+        "subintent": "seek",
+        "domain": [
+          "construction & trades"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "plumbing",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {
+            "language": "kannada"
+          },
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a service request because the user is seeking professional assistance. Plumbing was extracted as the service type based on the explicit mention of 'plumber.' The preference for the Kannada language was captured under other_party_preferences as a categorical attribute. No specific location was mentioned, so the default location_match_mode was set to 'near_me.'"
+      }
+    },
+    {
+      "query": "looking for tutor who speaks Hindi language",
+      "result": {
+        "intent": "service",
+        "subintent": "seek",
+        "domain": [
+          "education & training"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "tutoring",
+            "categorical": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {
+            "language": "hindi"
+          },
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a service request because the user is seeking professional assistance in the form of tutoring. The item type was extracted as 'tutoring' under the domain 'education & training'. The preference for a tutor who speaks Hindi was captured under 'other_party_preferences' with the language attribute set to 'hindi'. No specific location was mentioned, so the default location match mode 'near_me' was applied."
+      }
+    }
+  ],
+  "Test 6: 'Size' Polysemy": [
+    {
+      "query": "need a 2BHK flat with 1000 sqft size",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "real estate & property"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "apartment",
+            "categorical": {
+              "layout": "2bhk"
+            },
+            "min": {
+              "space": [
+                {
+                  "type": "area",
+                  "value": 1000,
+                  "unit": "sqft"
+                }
+              ]
+            },
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item, specifically a 2BHK flat. The type was identified as 'apartment' with a layout of '2bhk'. The minimum area constraint of 1000 sqft was extracted from the query. No location or other preferences were mentioned, so the default location match mode is 'near_me'."
+      }
+    },
+    {
+      "query": "looking for XL size t-shirt",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "fashion & apparel"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "t-shirt",
+            "categorical": {
+              "size": "xl"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is looking to buy a tangible item. The item type 't-shirt' was extracted, and the size 'XL' was captured as a categorical attribute based on the explicit mention in the query. No additional constraints or preferences were stated. Since no location was mentioned, the default location match mode 'near_me' was applied."
+      }
+    },
+    {
+      "query": "need 256GB size phone",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "range": {
+              "capacity": [
+                {
+                  "type": "storage",
+                  "min": 256,
+                  "max": 256,
+                  "unit": "gb"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. A smartphone was extracted as the item type based on the mention of 'phone,' and a storage capacity of 256GB was extracted as an exact value constraint. No location was explicitly mentioned, so local matching applies."
+      }
+    }
+  ],
+  "Test 7: 'Experience' Polysemy": [
+    {
+      "query": "need tutor with 5 years experience",
+      "result": {
+        "intent": "service",
+        "subintent": "seek",
+        "domain": [
+          "education & training"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "tutoring",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {
+            "time": [
+              {
+                "type": "experience",
+                "value": 60,
+                "unit": "month"
+              }
+            ]
+          },
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a service request because the user is seeking professional assistance. Tutoring was extracted as the service type. A minimum experience constraint of 5 years was normalized to 60 months and captured under other_party_preferences. No specific location was mentioned, so proximity-based matching applies."
+      }
+    },
+    {
+      "query": "looking for experienced yoga instructor",
+      "result": {
+        "intent": "service",
+        "subintent": "seek",
+        "domain": [
+          "alternative & holistic health"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "yoga",
+            "categorical": {},
+            "min": {
+              "skill": [
+                {
+                  "type": "experience",
+                  "value": 36,
+                  "unit": "month"
+                }
+              ]
+            },
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {
+            "time": [
+              {
+                "type": "experience",
+                "value": 36,
+                "unit": "month"
+              }
+            ]
+          },
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a service request because the user is seeking professional assistance. Yoga instruction was extracted as the service type, and the term 'experienced' was interpreted as a minimum of 3 years (36 months) of experience, which was captured in both the items and other_party_preferences fields. No specific location or exclusions were mentioned, so the default location match mode is set to 'near_me'."
+      }
+    }
+  ],
+  "Test 8: Currency Detection": [
+    {
+      "query": "laptop under 50k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 50000,
+                  "unit": "local"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. The item type 'laptop' was extracted, and a maximum price constraint of 50,000 was identified from the phrase 'under 50k'. No specific location or other preferences were mentioned, so the default location match mode 'near_me' was applied."
+      }
+    },
+    {
+      "query": "laptop under $500",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 500,
+                  "unit": "usd"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. The item type 'laptop' was extracted, and a maximum price constraint of $500 was identified from the query. No location was explicitly mentioned, so the default location match mode 'near_me' was applied. No other constraints or preferences were stated."
+      }
+    },
+    {
+      "query": "laptop under ₹50000",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 50000,
+                  "unit": "inr"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. A laptop was extracted as the item type, with a maximum price constraint of ₹50000 explicitly mentioned in the query. No location or additional preferences were specified, so the default location match mode is set to 'near_me'."
+      }
+    },
+    {
+      "query": "laptop under 5 lakh rupees",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 500000,
+                  "unit": "inr"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. The item type 'laptop' was extracted, and a maximum price constraint of 5 lakh rupees was identified from the query. No specific location or other preferences were mentioned, so the default location match mode 'near_me' was applied."
+      }
+    }
+  ],
+  "Test 9: Constraint Detection": [
+    {
+      "query": "laptop with 16GB RAM",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "categorical": {},
+            "min": {
+              "capacity": [
+                {
+                  "type": "memory",
+                  "value": 16,
+                  "unit": "gb"
+                }
+              ]
+            },
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking a tangible item. A laptop was extracted as the item type, with a minimum memory capacity of 16GB extracted from the query. No additional constraints or preferences were mentioned, and no location was specified, so proximity-based matching applies."
+      }
+    },
+    {
+      "query": "laptop with at least 16GB RAM",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "min": {
+              "capacity": [
+                {
+                  "type": "memory",
+                  "value": 16,
+                  "unit": "gb"
+                }
+              ]
+            },
+            "categorical": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking a tangible item. A laptop was extracted as the item type, with a minimum RAM capacity of 16GB extracted from the phrase 'at least 16GB RAM'. No additional constraints or preferences were mentioned. Since no location was specified, the default location match mode is set to 'near_me'."
+      }
+    },
+    {
+      "query": "laptop under 80k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 80000,
+                  "unit": "inr"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. The item type 'laptop' was extracted, and a maximum price constraint of 80,000 INR was identified from the phrase 'under 80k'. No location or additional preferences were mentioned, so the default location match mode 'near_me' was applied."
+      }
+    },
+    {
+      "query": "laptop between 50k and 80k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "categorical": {},
+            "min": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 50000,
+                  "unit": "local"
+                }
+              ]
+            },
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 80000,
+                  "unit": "local"
+                }
+              ]
+            },
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. A laptop was extracted as the item type, with a price range constraint of 50,000 to 80,000 extracted from the query. No additional attributes or preferences were mentioned. No location was specified, so local matching applies."
+      }
+    },
+    {
+      "query": "laptop around 60k",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "laptop",
+            "range": {
+              "cost": [
+                {
+                  "type": "price",
+                  "min": 60000,
+                  "max": 60000,
+                  "unit": "local"
+                }
+              ]
+            }
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking to buy a tangible item. A laptop was extracted as the item type, with a price constraint of around 60k interpreted as an exact value. No location was explicitly mentioned, so local matching applies."
+      }
+    }
+  ],
+  "Test 10: Implication Rules": [
+    {
+      "query": "single owner car for sale",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "automotive & vehicles"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "car",
+            "categorical": {
+              "condition": "used",
+              "ownership": "single"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user is offering a tangible item for sale. The item type was identified as a car, with the condition extracted as 'used' and ownership specified as 'single owner'. No specific location or additional constraints were mentioned, so the default location match mode is set to 'near_me'."
+      }
+    },
+    {
+      "query": "first owner bike",
+      "result": {
+        "intent": "product",
+        "subintent": "buy",
+        "domain": [
+          "automotive & vehicles"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "bike",
+            "categorical": {
+              "condition": "used",
+              "ownership": "first"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "other_party_exclusions": {},
+        "self_attributes": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product purchase because the user is seeking a tangible item, specifically a bike. The condition was identified as 'used' with the ownership specified as 'first owner,' which was extracted as categorical attributes. No location or additional constraints were mentioned, so the default location match mode is set to 'near_me.'"
+      }
+    },
+    {
+      "query": "sealed iPhone for sale",
+      "result": {
+        "intent": "product",
+        "subintent": "sell",
+        "domain": [
+          "technology & electronics"
+        ],
+        "primary_mutual_category": [],
+        "items": [
+          {
+            "type": "smartphone",
+            "categorical": {
+              "brand": "apple",
+              "condition": "new",
+              "packaging": "sealed"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "item_exclusions": [],
+        "other_party_preferences": {},
+        "other_party_exclusions": {},
+        "self_attributes": {},
+        "self_exclusions": {},
+        "target_location": {},
+        "location_match_mode": "near_me",
+        "location_exclusions": [],
+        "reasoning": "The query was classified as a product sale because the user is offering a tangible item for sale. The item was identified as a smartphone of the brand Apple (iPhone), with the condition marked as new and packaging specified as sealed. No location or additional constraints were mentioned, so the default location match mode is set to 'near_me'."
+      }
+    }
+  ]
+}

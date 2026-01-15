@@ -1,0 +1,764 @@
+================================================================================
+🧪 CANONICALIZATION & POLYSEMY TEST SUITE
+================================================================================
+
+
+################################################################################
+# Test 1: Phone Synonyms
+################################################################################
+
+================================================================================
+🧪 TEST: Test 1: Phone Synonyms
+================================================================================
+Query: looking for a phone under 30k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 1: Phone Synonyms
+================================================================================
+Query: need a mobile under 30k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 1: Phone Synonyms
+================================================================================
+Query: want to buy a cellphone under 30k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 1: Phone Synonyms
+================================================================================
+Query: searching for a smartphone under 30k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 30000,
+                  "unit": "local"
+            }
+      ]
+}
+
+================================================================================
+📊 Test 1: Phone Synonyms - SUMMARY
+================================================================================
+  'looking for a phone under 30k...' → type: 'smartphone'
+  'need a mobile under 30k...' → type: 'smartphone'
+  'want to buy a cellphone under 30k...' → type: 'smartphone'
+  'searching for a smartphone under 30k...' → type: 'smartphone'
+  ✅ CONSISTENT: All canonicalized to 'smartphone'
+
+
+################################################################################
+# Test 2: Laptop Synonyms
+################################################################################
+
+================================================================================
+🧪 TEST: Test 2: Laptop Synonyms
+================================================================================
+Query: selling my laptop
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+
+================================================================================
+🧪 TEST: Test 2: Laptop Synonyms
+================================================================================
+Query: selling my notebook
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+
+================================================================================
+🧪 TEST: Test 2: Laptop Synonyms
+================================================================================
+Query: selling my portable computer
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+
+================================================================================
+📊 Test 2: Laptop Synonyms - SUMMARY
+================================================================================
+  'selling my laptop...' → type: 'laptop'
+  'selling my notebook...' → type: 'laptop'
+  'selling my portable computer...' → type: 'laptop'
+  ✅ CONSISTENT: All canonicalized to 'laptop'
+
+
+################################################################################
+# Test 3: Condition Synonyms
+################################################################################
+
+================================================================================
+🧪 TEST: Test 3: Condition Synonyms
+================================================================================
+Query: used iphone for sale
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Categorical: {
+      "condition": "used",
+      "brand": "apple"
+}
+
+================================================================================
+🧪 TEST: Test 3: Condition Synonyms
+================================================================================
+Query: second hand iphone for sale
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Categorical: {
+      "condition": "used",
+      "brand": "apple"
+}
+
+================================================================================
+🧪 TEST: Test 3: Condition Synonyms
+================================================================================
+Query: pre-owned iphone for sale
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Categorical: {
+      "condition": "used",
+      "brand": "apple"
+}
+
+================================================================================
+🧪 TEST: Test 3: Condition Synonyms
+================================================================================
+Query: 2nd hand iphone for sale
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Categorical: {
+      "condition": "used",
+      "brand": "apple"
+}
+
+================================================================================
+📊 Test 3: Condition Synonyms - SUMMARY
+================================================================================
+  'used iphone for sale...' → type: 'smartphone'
+  'second hand iphone for sale...' → type: 'smartphone'
+  'pre-owned iphone for sale...' → type: 'smartphone'
+  '2nd hand iphone for sale...' → type: 'smartphone'
+  ✅ CONSISTENT: All canonicalized to 'smartphone'
+
+
+################################################################################
+# Test 4: 'Language' Polysemy - Programming
+################################################################################
+
+================================================================================
+🧪 TEST: Test 4: 'Language' Polysemy - Programming
+================================================================================
+Query: need a developer who knows Python language
+
+✅ SUCCESS
+
+Intent: service / seek
+Domain: ['education & training']
+
+Items:
+  • Type: developer
+    Categorical: {
+      "language": "python"
+}
+
+================================================================================
+🧪 TEST: Test 4: 'Language' Polysemy - Programming
+================================================================================
+Query: looking for software engineer with Rust language experience
+
+✅ SUCCESS
+
+Intent: service / seek
+Domain: ['business services & consulting']
+
+Items:
+  • Type: software engineering
+    Categorical: {
+      "language": "rust"
+}
+
+Other Party Preferences:
+  {
+  "identity": [
+    {
+      "type": "profession",
+      "value": "software engineer"
+    }
+  ],
+  "habits": {},
+  "min": {},
+  "max": {},
+  "range": {}
+}
+
+================================================================================
+📊 Test 4: 'Language' Polysemy - Programming - SUMMARY
+================================================================================
+  'need a developer who knows Python language...'
+    → Items categorical: {'language': 'python'}
+  'looking for software engineer with Rust language e...'
+    → Items categorical: {'language': 'rust'}
+    → Other party identity: [{'type': 'profession', 'value': 'software engineer'}]
+
+
+################################################################################
+# Test 5: 'Language' Polysemy - Speaking
+################################################################################
+
+================================================================================
+🧪 TEST: Test 5: 'Language' Polysemy - Speaking
+================================================================================
+Query: need a plumber who speaks Kannada language
+
+✅ SUCCESS
+
+Intent: service / seek
+Domain: ['construction & trades']
+
+Items:
+  • Type: plumbing
+
+Other Party Preferences:
+  {
+  "identity": [
+    {
+      "type": "language",
+      "value": "kannada"
+    }
+  ],
+  "habits": {},
+  "min": {},
+  "max": {},
+  "range": {}
+}
+
+================================================================================
+🧪 TEST: Test 5: 'Language' Polysemy - Speaking
+================================================================================
+Query: looking for tutor who speaks Hindi language
+
+✅ SUCCESS
+
+Intent: service / seek
+Domain: ['education & training']
+
+Items:
+  • Type: tutoring
+
+Other Party Preferences:
+  {
+  "identity": [
+    {
+      "type": "language",
+      "value": "hindi"
+    }
+  ],
+  "habits": {},
+  "min": {},
+  "max": {},
+  "range": {}
+}
+
+================================================================================
+📊 Test 5: 'Language' Polysemy - Speaking - SUMMARY
+================================================================================
+  'need a plumber who speaks Kannada language...'
+    → Other party identity: [{'type': 'language', 'value': 'kannada'}]
+  'looking for tutor who speaks Hindi language...'
+    → Other party identity: [{'type': 'language', 'value': 'hindi'}]
+
+
+################################################################################
+# Test 6: 'Size' Polysemy
+################################################################################
+
+================================================================================
+🧪 TEST: Test 6: 'Size' Polysemy
+================================================================================
+Query: need a 2BHK flat with 1000 sqft size
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['real estate & property']
+
+Items:
+  • Type: apartment
+    Categorical: {
+      "layout": "2bhk"
+}
+    Min: {
+      "space": [
+            {
+                  "type": "area",
+                  "value": 1000,
+                  "unit": "sqft"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 6: 'Size' Polysemy
+================================================================================
+Query: looking for XL size t-shirt
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['fashion & apparel']
+
+Items:
+  • Type: t-shirt
+    Categorical: {
+      "size": "xl"
+}
+
+================================================================================
+🧪 TEST: Test 6: 'Size' Polysemy
+================================================================================
+Query: need 256GB size phone
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+
+================================================================================
+📊 Test 6: 'Size' Polysemy - SUMMARY
+================================================================================
+  'need a 2BHK flat with 1000 sqft size...'
+    → Items categorical: {'layout': '2bhk'}
+  'looking for XL size t-shirt...'
+    → Items categorical: {'size': 'xl'}
+  'need 256GB size phone...'
+
+
+################################################################################
+# Test 7: 'Experience' Polysemy
+################################################################################
+
+================================================================================
+🧪 TEST: Test 7: 'Experience' Polysemy
+================================================================================
+Query: need tutor with 5 years experience
+
+✅ SUCCESS
+
+Intent: service / seek
+Domain: ['education & training']
+
+Items:
+  • Type: tutoring
+
+Other Party Preferences:
+  {
+  "identity": [],
+  "habits": {},
+  "min": {
+    "time": [
+      {
+        "type": "experience",
+        "value": 60,
+        "unit": "month"
+      }
+    ]
+  },
+  "max": {},
+  "range": {}
+}
+
+================================================================================
+🧪 TEST: Test 7: 'Experience' Polysemy
+================================================================================
+Query: looking for experienced yoga instructor
+
+✅ SUCCESS
+
+Intent: service / seek
+Domain: ['alternative & holistic health']
+
+Items:
+  • Type: yoga
+    Categorical: {
+      "experience_level": "experienced"
+}
+
+Other Party Preferences:
+  {
+  "identity": [],
+  "habits": {},
+  "min": {
+    "time": [
+      {
+        "type": "experience",
+        "value": 36,
+        "unit": "month"
+      }
+    ]
+  },
+  "max": {},
+  "range": {}
+}
+
+================================================================================
+📊 Test 7: 'Experience' Polysemy - SUMMARY
+================================================================================
+  'need tutor with 5 years experience...'
+  'looking for experienced yoga instructor...'
+    → Items categorical: {'experience_level': 'experienced'}
+
+
+################################################################################
+# Test 8: Currency Detection
+################################################################################
+
+================================================================================
+🧪 TEST: Test 8: Currency Detection
+================================================================================
+Query: laptop under 50k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 50000,
+                  "unit": "local"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 8: Currency Detection
+================================================================================
+Query: laptop under $500
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 500,
+                  "unit": "usd"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 8: Currency Detection
+================================================================================
+Query: laptop under ₹50000
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 50000,
+                  "unit": "inr"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 8: Currency Detection
+================================================================================
+Query: laptop under 5 lakh rupees
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 500000,
+                  "unit": "inr"
+            }
+      ]
+}
+
+================================================================================
+📊 Test 8: Currency Detection - SUMMARY
+================================================================================
+
+
+################################################################################
+# Test 9: Constraint Detection
+################################################################################
+
+================================================================================
+🧪 TEST: Test 9: Constraint Detection
+================================================================================
+Query: laptop with 16GB RAM
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+
+================================================================================
+🧪 TEST: Test 9: Constraint Detection
+================================================================================
+Query: laptop with at least 16GB RAM
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+    Min: {
+      "capacity": [
+            {
+                  "type": "memory",
+                  "value": 16,
+                  "unit": "gb"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 9: Constraint Detection
+================================================================================
+Query: laptop under 80k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+    Max: {
+      "cost": [
+            {
+                  "type": "price",
+                  "value": 80000,
+                  "unit": "inr"
+            }
+      ]
+}
+
+================================================================================
+🧪 TEST: Test 9: Constraint Detection
+================================================================================
+Query: laptop between 50k and 80k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+
+================================================================================
+🧪 TEST: Test 9: Constraint Detection
+================================================================================
+Query: laptop around 60k
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['technology & electronics']
+
+Items:
+  • Type: laptop
+
+================================================================================
+📊 Test 9: Constraint Detection - SUMMARY
+================================================================================
+
+
+################################################################################
+# Test 10: Implication Rules
+################################################################################
+
+================================================================================
+🧪 TEST: Test 10: Implication Rules
+================================================================================
+Query: single owner car for sale
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['automotive & vehicles']
+
+Items:
+  • Type: car
+    Categorical: {
+      "condition": "used",
+      "ownership": "single"
+}
+
+================================================================================
+🧪 TEST: Test 10: Implication Rules
+================================================================================
+Query: first owner bike
+
+✅ SUCCESS
+
+Intent: product / buy
+Domain: ['automotive & vehicles']
+
+Items:
+  • Type: bike
+    Categorical: {
+      "condition": "used",
+      "ownership": "first"
+}
+
+================================================================================
+🧪 TEST: Test 10: Implication Rules
+================================================================================
+Query: sealed iPhone for sale
+
+✅ SUCCESS
+
+Intent: product / sell
+Domain: ['technology & electronics']
+
+Items:
+  • Type: smartphone
+    Categorical: {
+      "condition": "new",
+      "packaging": "sealed",
+      "brand": "apple"
+}
+
+================================================================================
+📊 Test 10: Implication Rules - SUMMARY
+================================================================================
+
+
+================================================================================
+💾 Results saved to: canonicalization_test_results.json
+================================================================================

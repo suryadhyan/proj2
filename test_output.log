@@ -1,0 +1,179 @@
+================================================================================
+🧪 EXTRACTION API TEST SUITE (SINGLE approach)
+================================================================================
+
+📂 Loading files...
+✅ Loaded prompt (80419 chars)
+✅ Loaded 10 test examples
+✅ Single stage prompt: 77801 chars
+
+================================================================================
+Test 1/10: looking for a used macbook pro with at least 16gb ram under ...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Technology & Electronics']
+     Actual: ['technology & electronics']
+   • items: value_mismatch
+     Expected: [{'type': 'laptop', 'categorical': {'condition': 'used', 'brand': 'apple', 'model': 'macbook pro'}, 'min': {'capacity': [{'type': 'memory', 'value': 16, 'unit': 'gb'}]}, 'max': {'cost': [{'type': 'price', 'value': 80000, 'unit': 'inr'}]}, 'range': {}}]
+     Actual: [{'type': 'laptop', 'categorical': {'brand': 'apple', 'model': 'macbook pro', 'condition': 'used'}, 'min': {'capacity': [{'type': 'memory', 'value': 16, 'unit': 'gb'}]}, 'max': {'cost': [{'type': 'price', 'value': 80000, 'unit': 'local'}]}}]
+   • other_party_preferences: value_mismatch
+     Expected: {}
+     Actual: {'categorical': {}, 'min': {}, 'max': {}, 'range': {}}
+   • self_attributes: value_mismatch
+     Expected: {}
+     Actual: {'categorical': {}, 'min': {}, 'max': {}, 'range': {}}
+
+================================================================================
+Test 2/10: selling my old royal enfield classic 350, single owner, 1500...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Automotive & Vehicles']
+     Actual: ['automotive & vehicles']
+   • items: value_mismatch
+     Expected: [{'type': 'motorcycle', 'categorical': {'brand': 'royal enfield', 'model': 'classic 350', 'condition': 'used', 'ownership': 'single'}, 'min': {}, 'max': {}, 'range': {'performance': [{'type': 'odometer', 'min': 15000, 'max': 15000, 'unit': 'km'}]}}]
+     Actual: [{'type': 'motorcycle', 'categorical': {'brand': 'royal enfield', 'model': 'classic 350', 'condition': 'used', 'ownership': 'single'}, 'range': {'performance': [{'type': 'odometer', 'min': 15000, 'max': 15000, 'unit': 'km'}]}}]
+   • other_party_preferences: value_mismatch
+     Expected: {}
+     Actual: {'categorical': {}, 'min': {}, 'max': {}, 'range': {}}
+   • self_attributes: value_mismatch
+     Expected: {}
+     Actual: {'categorical': {}, 'min': {}, 'max': {}, 'range': {}}
+
+================================================================================
+Test 3/10: need a kannada speaking plumber urgently in jayanagar...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Construction & Trades']
+     Actual: ['construction & trades']
+   • items: value_mismatch
+     Expected: [{'type': 'plumbing', 'categorical': {}, 'min': {}, 'max': {}, 'range': {}}]
+     Actual: [{'type': 'plumbing'}]
+   • other_party_preferences: value_mismatch
+     Expected: {'categorical': {'language': 'kannada'}, 'min': {}, 'max': {}, 'range': {}}
+     Actual: {'identity': [{'type': 'language', 'value': 'kannada'}]}
+
+================================================================================
+Test 4/10: i'm a graphic designer with 5 years experience, available fo...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Marketing, Advertising & Design']
+     Actual: ['marketing, advertising & design']
+   • items: value_mismatch
+     Expected: [{'type': 'graphic design', 'categorical': {}, 'min': {}, 'max': {}, 'range': {}}]
+     Actual: [{'type': 'graphic design', 'categorical': {'mode': 'freelance'}, 'min': {'time': [{'type': 'experience', 'value': 60, 'unit': 'month'}]}}]
+   • self_attributes: value_mismatch
+     Expected: {'categorical': {'profession': 'graphic designer'}, 'min': {}, 'max': {}, 'range': {'time': [{'type': 'experience', 'min': 60, 'max': 60, 'unit': 'months'}]}}
+     Actual: {'identity': [{'type': 'profession', 'value': 'graphic designer'}], 'min': {'time': [{'type': 'experience', 'value': 60, 'unit': 'month'}]}}
+   • location_match_mode: value_mismatch
+     Expected: near_me
+     Actual: global
+
+================================================================================
+Test 5/10: anyone up for weekend treks around bangalore?...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Sports & Outdoors']
+     Actual: []
+   • primary_mutual_category: value_mismatch
+     Expected: ['Adventure']
+     Actual: ['adventure']
+   • items: value_mismatch
+     Expected: [{'type': 'trekking', 'categorical': {'schedule': 'weekend'}, 'min': {}, 'max': {}, 'range': {}}]
+     Actual: []
+
+================================================================================
+Test 6/10: 2bhk furnished flat wanted in koramangala, prefer non-smoker...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Real Estate & Property']
+     Actual: ['real estate & property']
+   • primary_mutual_category: value_mismatch
+     Expected: ['Roommates']
+     Actual: ['roommates']
+   • items: value_mismatch
+     Expected: [{'type': 'apartment', 'categorical': {'configuration': '2bhk', 'furnishing': 'furnished'}, 'min': {}, 'max': {}, 'range': {}}]
+     Actual: [{'type': 'apartment', 'categorical': {'furnishing': 'furnished'}, 'range': {'capacity': [{'type': 'bedrooms', 'min': 2, 'max': 2, 'unit': 'count'}]}}]
+   • other_party_preferences: value_mismatch
+     Expected: {'categorical': {'smoking': 'no'}, 'min': {}, 'max': {}, 'range': {}}
+     Actual: {'habits': {'smoking': 'no'}}
+
+================================================================================
+Test 7/10: giving away my old sofa, need gone by this weekend...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Home & Furniture']
+     Actual: ['home & furniture']
+   • items: value_mismatch
+     Expected: [{'type': 'sofa', 'categorical': {'condition': 'used'}, 'min': {}, 'max': {}, 'range': {}}]
+     Actual: [{'type': 'sofa', 'categorical': {'condition': 'used'}}]
+
+================================================================================
+Test 8/10: can someone teach my kid math? class 10 cbse board...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Education & Training']
+     Actual: ['education & training']
+   • items: value_mismatch
+     Expected: [{'type': 'tutoring', 'categorical': {'subject': 'mathematics', 'level': 'class 10', 'board': 'cbse'}, 'min': {}, 'max': {}, 'range': {}}]
+     Actual: [{'type': 'tutoring', 'categorical': {'subject': 'math', 'board': 'cbse', 'grade': '10'}}]
+
+================================================================================
+Test 9/10: software developer looking for cofounder to build an edtech ...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Business Services & Consulting']
+     Actual: ['education & training']
+   • primary_mutual_category: value_mismatch
+     Expected: ['Professional']
+     Actual: ['professional']
+   • other_party_preferences: value_mismatch
+     Expected: {}
+     Actual: {'identity': [{'type': 'profession', 'value': 'cofounder'}]}
+   • self_attributes: value_mismatch
+     Expected: {'categorical': {'profession': 'software developer'}, 'min': {}, 'max': {}, 'range': {}}
+     Actual: {'identity': [{'type': 'profession', 'value': 'software developer'}]}
+
+================================================================================
+Test 10/10: iphone 14 pro max 256gb...
+================================================================================
+🔹 Single API call for full extraction...
+❌ FAIL - Differences found:
+   • domain: value_mismatch
+     Expected: ['Technology & Electronics']
+     Actual: ['technology & electronics']
+   • items: value_mismatch
+     Expected: [{'type': 'smartphone', 'categorical': {'brand': 'apple', 'model': 'iphone 14 pro max'}, 'min': {}, 'max': {}, 'range': {'capacity': [{'type': 'storage', 'min': 256, 'max': 256, 'unit': 'gb'}]}}]
+     Actual: [{'type': 'smartphone', 'categorical': {'model': 'iphone 14 pro max'}, 'range': {'capacity': [{'type': 'storage', 'min': 256, 'max': 256, 'unit': 'gb'}]}}]
+   • other_party_preferences: value_mismatch
+     Expected: {}
+     Actual: {'categorical': {}, 'min': {}, 'max': {}, 'range': {}}
+   • self_attributes: value_mismatch
+     Expected: {}
+     Actual: {'categorical': {}, 'min': {}, 'max': {}, 'range': {}}
+
+================================================================================
+📊 TEST SUMMARY
+================================================================================
+✅ Passed: 0/10
+❌ Failed: 10/10
+📈 Success Rate: 0.0%
+
+💾 Results saved to: test_results_single.json

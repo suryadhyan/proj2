@@ -1,0 +1,1048 @@
+[
+  {
+    "query": "looking for a used macbook pro with at least 16gb ram under 80k",
+    "success": false,
+    "actual": {
+      "intent": "product",
+      "subintent": "buy",
+      "domain": [
+        "technology & electronics"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "laptop",
+          "categorical": {
+            "brand": "apple",
+            "model": "macbook pro",
+            "condition": "used"
+          },
+          "min": {
+            "capacity": [
+              {
+                "type": "memory",
+                "value": 16,
+                "unit": "gb"
+              }
+            ]
+          },
+          "max": {
+            "cost": [
+              {
+                "type": "price",
+                "value": 80000,
+                "unit": "local"
+              }
+            ]
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      },
+      "other_party_exclusions": {},
+      "self_attributes": {
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      },
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "near_me",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a product purchase because the user is looking to buy a tangible item. The item type was identified as a 'laptop' with the brand 'Apple' and model 'MacBook Pro', and the condition was specified as 'used'. A minimum RAM capacity of 16GB was extracted as a constraint, along with a maximum price of 80,000 in local currency. No location was explicitly mentioned, so the default location match mode 'near_me' was applied. No other preferences or exclusions were stated."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Technology & Electronics"
+        ],
+        "actual": [
+          "technology & electronics"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "laptop",
+            "categorical": {
+              "condition": "used",
+              "brand": "apple",
+              "model": "macbook pro"
+            },
+            "min": {
+              "capacity": [
+                {
+                  "type": "memory",
+                  "value": 16,
+                  "unit": "gb"
+                }
+              ]
+            },
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 80000,
+                  "unit": "inr"
+                }
+              ]
+            },
+            "range": {}
+          }
+        ],
+        "actual": [
+          {
+            "type": "laptop",
+            "categorical": {
+              "brand": "apple",
+              "model": "macbook pro",
+              "condition": "used"
+            },
+            "min": {
+              "capacity": [
+                {
+                  "type": "memory",
+                  "value": 16,
+                  "unit": "gb"
+                }
+              ]
+            },
+            "max": {
+              "cost": [
+                {
+                  "type": "price",
+                  "value": 80000,
+                  "unit": "local"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "field": "other_party_preferences",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        }
+      },
+      {
+        "field": "self_attributes",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        }
+      }
+    ]
+  },
+  {
+    "query": "selling my old royal enfield classic 350, single owner, 15000km done",
+    "success": false,
+    "actual": {
+      "intent": "product",
+      "subintent": "sell",
+      "domain": [
+        "automotive & vehicles"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "motorcycle",
+          "categorical": {
+            "brand": "royal enfield",
+            "model": "classic 350",
+            "condition": "used",
+            "ownership": "single"
+          },
+          "range": {
+            "performance": [
+              {
+                "type": "odometer",
+                "min": 15000,
+                "max": 15000,
+                "unit": "km"
+              }
+            ]
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      },
+      "other_party_exclusions": {},
+      "self_attributes": {
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      },
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "near_me",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a product sell intent because the user is offering a tangible item for sale. The item was identified as a 'motorcycle' with the brand 'Royal Enfield' and model 'Classic 350'. The condition was extracted as 'used' with 'single' ownership based on the explicit mention. The odometer reading of 15000 km was captured as an exact range. No location or other preferences were specified, so the default location match mode is 'near_me'."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Automotive & Vehicles"
+        ],
+        "actual": [
+          "automotive & vehicles"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "motorcycle",
+            "categorical": {
+              "brand": "royal enfield",
+              "model": "classic 350",
+              "condition": "used",
+              "ownership": "single"
+            },
+            "min": {},
+            "max": {},
+            "range": {
+              "performance": [
+                {
+                  "type": "odometer",
+                  "min": 15000,
+                  "max": 15000,
+                  "unit": "km"
+                }
+              ]
+            }
+          }
+        ],
+        "actual": [
+          {
+            "type": "motorcycle",
+            "categorical": {
+              "brand": "royal enfield",
+              "model": "classic 350",
+              "condition": "used",
+              "ownership": "single"
+            },
+            "range": {
+              "performance": [
+                {
+                  "type": "odometer",
+                  "min": 15000,
+                  "max": 15000,
+                  "unit": "km"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "field": "other_party_preferences",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        }
+      },
+      {
+        "field": "self_attributes",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        }
+      }
+    ]
+  },
+  {
+    "query": "need a kannada speaking plumber urgently in jayanagar",
+    "success": false,
+    "actual": {
+      "intent": "service",
+      "subintent": "seek",
+      "domain": [
+        "construction & trades"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "plumbing"
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {
+        "identity": [
+          {
+            "type": "language",
+            "value": "kannada"
+          }
+        ]
+      },
+      "other_party_exclusions": {},
+      "self_attributes": {},
+      "self_exclusions": {},
+      "target_location": {
+        "name": "jayanagar"
+      },
+      "location_match_mode": "explicit",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a service request because the user is seeking professional assistance. Plumbing was extracted as the service type. The preference for a Kannada-speaking plumber was captured under other_party_preferences with the language specified. The location 'Jayanagar' was explicitly mentioned, so it was extracted as the target location with the location_match_mode set to 'explicit'. No exclusions or additional constraints were stated."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Construction & Trades"
+        ],
+        "actual": [
+          "construction & trades"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "plumbing",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "actual": [
+          {
+            "type": "plumbing"
+          }
+        ]
+      },
+      {
+        "field": "other_party_preferences",
+        "issue": "value_mismatch",
+        "expected": {
+          "categorical": {
+            "language": "kannada"
+          },
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "actual": {
+          "identity": [
+            {
+              "type": "language",
+              "value": "kannada"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "query": "i'm a graphic designer with 5 years experience, available for freelance work",
+    "success": false,
+    "actual": {
+      "intent": "service",
+      "subintent": "provide",
+      "domain": [
+        "marketing, advertising & design"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "graphic design",
+          "categorical": {
+            "mode": "freelance"
+          },
+          "min": {
+            "time": [
+              {
+                "type": "experience",
+                "value": 60,
+                "unit": "month"
+              }
+            ]
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {},
+      "other_party_exclusions": {},
+      "self_attributes": {
+        "identity": [
+          {
+            "type": "profession",
+            "value": "graphic designer"
+          }
+        ],
+        "min": {
+          "time": [
+            {
+              "type": "experience",
+              "value": 60,
+              "unit": "month"
+            }
+          ]
+        }
+      },
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "global",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a service intent with a subintent of 'provide' because the user is offering their professional services. The domain 'marketing, advertising & design' was selected based on the profession of graphic design. The item 'graphic design' was extracted with a freelance mode and a minimum experience of 5 years (normalized to 60 months). Self attributes were populated to reflect the user's profession and experience. No specific location or exclusions were mentioned, so global matching applies."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Marketing, Advertising & Design"
+        ],
+        "actual": [
+          "marketing, advertising & design"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "graphic design",
+            "categorical": {},
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "actual": [
+          {
+            "type": "graphic design",
+            "categorical": {
+              "mode": "freelance"
+            },
+            "min": {
+              "time": [
+                {
+                  "type": "experience",
+                  "value": 60,
+                  "unit": "month"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "field": "self_attributes",
+        "issue": "value_mismatch",
+        "expected": {
+          "categorical": {
+            "profession": "graphic designer"
+          },
+          "min": {},
+          "max": {},
+          "range": {
+            "time": [
+              {
+                "type": "experience",
+                "min": 60,
+                "max": 60,
+                "unit": "months"
+              }
+            ]
+          }
+        },
+        "actual": {
+          "identity": [
+            {
+              "type": "profession",
+              "value": "graphic designer"
+            }
+          ],
+          "min": {
+            "time": [
+              {
+                "type": "experience",
+                "value": 60,
+                "unit": "month"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "field": "location_match_mode",
+        "issue": "value_mismatch",
+        "expected": "near_me",
+        "actual": "global"
+      }
+    ]
+  },
+  {
+    "query": "anyone up for weekend treks around bangalore?",
+    "success": false,
+    "actual": {
+      "intent": "mutual",
+      "subintent": "connect",
+      "domain": [],
+      "primary_mutual_category": [
+        "adventure"
+      ],
+      "items": [],
+      "item_exclusions": [],
+      "other_party_preferences": {},
+      "other_party_exclusions": {},
+      "self_attributes": {},
+      "self_exclusions": {},
+      "target_location": {
+        "name": "bangalore"
+      },
+      "location_match_mode": "explicit",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as mutual intent because it involves shared participation in an activity. The primary mutual category was identified as 'adventure' based on the mention of 'weekend treks.' The target location was extracted as 'bangalore' since it was explicitly mentioned. No specific preferences or exclusions were stated for the other party or self."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Sports & Outdoors"
+        ],
+        "actual": []
+      },
+      {
+        "field": "primary_mutual_category",
+        "issue": "value_mismatch",
+        "expected": [
+          "Adventure"
+        ],
+        "actual": [
+          "adventure"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "trekking",
+            "categorical": {
+              "schedule": "weekend"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "actual": []
+      }
+    ]
+  },
+  {
+    "query": "2bhk furnished flat wanted in koramangala, prefer non-smoker flatmates",
+    "success": false,
+    "actual": {
+      "intent": "mutual",
+      "subintent": "connect",
+      "domain": [
+        "real estate & property"
+      ],
+      "primary_mutual_category": [
+        "roommates"
+      ],
+      "items": [
+        {
+          "type": "apartment",
+          "categorical": {
+            "furnishing": "furnished"
+          },
+          "range": {
+            "capacity": [
+              {
+                "type": "bedrooms",
+                "min": 2,
+                "max": 2,
+                "unit": "count"
+              }
+            ]
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {
+        "habits": {
+          "smoking": "no"
+        }
+      },
+      "other_party_exclusions": {},
+      "self_attributes": {},
+      "self_exclusions": {},
+      "target_location": {
+        "name": "koramangala"
+      },
+      "location_match_mode": "explicit",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as mutual intent with a subintent of connect because the user is looking for flatmates to share a 2BHK furnished flat. The domain was identified as real estate & property, and the primary mutual category was set to roommates. The item type was extracted as an apartment with furnishing specified as furnished and a range constraint of exactly 2 bedrooms. The target location was explicitly mentioned as Koramangala, and the location match mode was set to explicit. The preference for non-smoker flatmates was captured under other_party_preferences as a habit constraint. No exclusions or self-attributes were mentioned."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Real Estate & Property"
+        ],
+        "actual": [
+          "real estate & property"
+        ]
+      },
+      {
+        "field": "primary_mutual_category",
+        "issue": "value_mismatch",
+        "expected": [
+          "Roommates"
+        ],
+        "actual": [
+          "roommates"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "apartment",
+            "categorical": {
+              "configuration": "2bhk",
+              "furnishing": "furnished"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "actual": [
+          {
+            "type": "apartment",
+            "categorical": {
+              "furnishing": "furnished"
+            },
+            "range": {
+              "capacity": [
+                {
+                  "type": "bedrooms",
+                  "min": 2,
+                  "max": 2,
+                  "unit": "count"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "field": "other_party_preferences",
+        "issue": "value_mismatch",
+        "expected": {
+          "categorical": {
+            "smoking": "no"
+          },
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "actual": {
+          "habits": {
+            "smoking": "no"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "query": "giving away my old sofa, need gone by this weekend",
+    "success": false,
+    "actual": {
+      "intent": "product",
+      "subintent": "sell",
+      "domain": [
+        "home & furniture"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "sofa",
+          "categorical": {
+            "condition": "used"
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {},
+      "other_party_exclusions": {},
+      "self_attributes": {},
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "near_me",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a product sell intent because the user is offering to give away a tangible item (sofa). The domain was identified as 'home & furniture' based on the item type. The sofa was extracted as the item with a 'used' condition inferred from the term 'old'. No specific location or exclusions were mentioned, so the default location match mode is 'near_me'. The urgency of 'this weekend' was noted but does not affect the schema."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Home & Furniture"
+        ],
+        "actual": [
+          "home & furniture"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "sofa",
+            "categorical": {
+              "condition": "used"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "actual": [
+          {
+            "type": "sofa",
+            "categorical": {
+              "condition": "used"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "query": "can someone teach my kid math? class 10 cbse board",
+    "success": false,
+    "actual": {
+      "intent": "service",
+      "subintent": "seek",
+      "domain": [
+        "education & training"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "tutoring",
+          "categorical": {
+            "subject": "math",
+            "board": "cbse",
+            "grade": "10"
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {},
+      "other_party_exclusions": {},
+      "self_attributes": {},
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "near_me",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a service request because the user is seeking professional assistance for teaching. Tutoring was extracted as the service type, with math as the subject, CBSE as the board, and class 10 as the grade based on explicit mention. No specific location or other constraints were provided, so proximity-based matching applies."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Education & Training"
+        ],
+        "actual": [
+          "education & training"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "tutoring",
+            "categorical": {
+              "subject": "mathematics",
+              "level": "class 10",
+              "board": "cbse"
+            },
+            "min": {},
+            "max": {},
+            "range": {}
+          }
+        ],
+        "actual": [
+          {
+            "type": "tutoring",
+            "categorical": {
+              "subject": "math",
+              "board": "cbse",
+              "grade": "10"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "query": "software developer looking for cofounder to build an edtech startup",
+    "success": false,
+    "actual": {
+      "intent": "mutual",
+      "subintent": "connect",
+      "domain": [
+        "education & training"
+      ],
+      "primary_mutual_category": [
+        "professional"
+      ],
+      "items": [],
+      "item_exclusions": [],
+      "other_party_preferences": {
+        "identity": [
+          {
+            "type": "profession",
+            "value": "cofounder"
+          }
+        ]
+      },
+      "other_party_exclusions": {},
+      "self_attributes": {
+        "identity": [
+          {
+            "type": "profession",
+            "value": "software developer"
+          }
+        ]
+      },
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "near_me",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as mutual intent because it involves a shared participation between individuals. The subintent was identified as 'connect' since the user is looking to establish a professional relationship with a cofounder. The domain was assigned as 'education & training' based on the mention of an edtech startup. The primary mutual category was set to 'professional' as the connection sought is for a professional purpose. The user's profession as a software developer was captured under self_attributes, and the desired cofounder role was captured under other_party_preferences. No specific location or exclusions were mentioned, so the default location match mode 'near_me' was applied."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Business Services & Consulting"
+        ],
+        "actual": [
+          "education & training"
+        ]
+      },
+      {
+        "field": "primary_mutual_category",
+        "issue": "value_mismatch",
+        "expected": [
+          "Professional"
+        ],
+        "actual": [
+          "professional"
+        ]
+      },
+      {
+        "field": "other_party_preferences",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "identity": [
+            {
+              "type": "profession",
+              "value": "cofounder"
+            }
+          ]
+        }
+      },
+      {
+        "field": "self_attributes",
+        "issue": "value_mismatch",
+        "expected": {
+          "categorical": {
+            "profession": "software developer"
+          },
+          "min": {},
+          "max": {},
+          "range": {}
+        },
+        "actual": {
+          "identity": [
+            {
+              "type": "profession",
+              "value": "software developer"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "query": "iphone 14 pro max 256gb",
+    "success": false,
+    "actual": {
+      "intent": "product",
+      "subintent": "buy",
+      "domain": [
+        "technology & electronics"
+      ],
+      "primary_mutual_category": [],
+      "items": [
+        {
+          "type": "smartphone",
+          "categorical": {
+            "model": "iphone 14 pro max"
+          },
+          "range": {
+            "capacity": [
+              {
+                "type": "storage",
+                "min": 256,
+                "max": 256,
+                "unit": "gb"
+              }
+            ]
+          }
+        }
+      ],
+      "item_exclusions": [],
+      "other_party_preferences": {
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      },
+      "other_party_exclusions": {},
+      "self_attributes": {
+        "categorical": {},
+        "min": {},
+        "max": {},
+        "range": {}
+      },
+      "self_exclusions": {},
+      "target_location": {},
+      "location_match_mode": "near_me",
+      "location_exclusions": [],
+      "reasoning": "The query was classified as a product purchase because the user is seeking a tangible item. The item type was identified as a smartphone, with the specific model 'iPhone 14 Pro Max' extracted from the query. The storage capacity was extracted as exactly 256GB, represented as a range with min and max values equal. No location or other constraints were mentioned, so the default location match mode is set to 'near_me'."
+    },
+    "differences": [
+      {
+        "field": "domain",
+        "issue": "value_mismatch",
+        "expected": [
+          "Technology & Electronics"
+        ],
+        "actual": [
+          "technology & electronics"
+        ]
+      },
+      {
+        "field": "items",
+        "issue": "value_mismatch",
+        "expected": [
+          {
+            "type": "smartphone",
+            "categorical": {
+              "brand": "apple",
+              "model": "iphone 14 pro max"
+            },
+            "min": {},
+            "max": {},
+            "range": {
+              "capacity": [
+                {
+                  "type": "storage",
+                  "min": 256,
+                  "max": 256,
+                  "unit": "gb"
+                }
+              ]
+            }
+          }
+        ],
+        "actual": [
+          {
+            "type": "smartphone",
+            "categorical": {
+              "model": "iphone 14 pro max"
+            },
+            "range": {
+              "capacity": [
+                {
+                  "type": "storage",
+                  "min": 256,
+                  "max": 256,
+                  "unit": "gb"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "field": "other_party_preferences",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        }
+      },
+      {
+        "field": "self_attributes",
+        "issue": "value_mismatch",
+        "expected": {},
+        "actual": {
+          "categorical": {},
+          "min": {},
+          "max": {},
+          "range": {}
+        }
+      }
+    ]
+  }
+]

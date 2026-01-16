@@ -272,22 +272,120 @@ def flatten_axis_ranges(axis_dict: Dict[str, List[Dict]]) -> Dict[str, List[Unio
     return flat
 
 
+def flatten_identity_lifestyle_to_categorical(identity_list: List[Dict], lifestyle_list: List[Dict]) -> Dict[str, str]:
+    """
+    Flatten identity and lifestyle arrays to categorical key-value pairs.
+
+    NEW format (from prompt):
+    {
+        "identity": [
+            {"type": "skill", "value": "cooking"},
+            {"type": "gender", "value": "female"}
+        ],
+        "lifestyle": [
+            {"type": "diet", "value": "vegetarian"}
+        ]
+    }
+
+    OLD format (for matching):
+    {
+        "skill": "cooking",
+        "gender": "female",
+        "diet": "vegetarian"
+    }
+
+    Args:
+        identity_list: List of identity objects with type and value
+        lifestyle_list: List of lifestyle objects with type and value
+
+    Returns:
+        Flat dict mapping type to value
+    """
+    categorical = {}
+
+    # Flatten identity array
+    if identity_list and isinstance(identity_list, list):
+        for item in identity_list:
+            if isinstance(item, dict):
+                item_type = item.get("type", "")
+                item_value = item.get("value", "")
+                if item_type and item_value:
+                    categorical[normalize_string(item_type)] = normalize_string(item_value)
+
+    # Flatten lifestyle array
+    if lifestyle_list and isinstance(lifestyle_list, list):
+        for item in lifestyle_list:
+            if isinstance(item, dict):
+                item_type = item.get("type", "")
+                item_value = item.get("value", "")
+                if item_type and item_value:
+                    categorical[normalize_string(item_type)] = normalize_string(item_value)
+
+    return categorical
+
+
+def flatten_habits_to_categorical(habits: Dict[str, str]) -> Dict[str, str]:
+    """
+    Flatten habits dict to categorical key-value pairs.
+
+    NEW format (from prompt):
+    {
+        "habits": {
+            "smoking": "no",
+            "drinking": "no"
+        }
+    }
+
+    OLD format (for matching):
+    {
+        "smoking": "no",
+        "drinking": "no"
+    }
+
+    Habits are already in the right format, just need to normalize and validate.
+
+    Args:
+        habits: Dict of habit flags (yes/no values)
+
+    Returns:
+        Normalized habits dict
+    """
+    categorical = {}
+
+    if habits and isinstance(habits, dict):
+        for key, value in habits.items():
+            # Normalize key and value
+            norm_key = normalize_string(key)
+            norm_value = normalize_string(value)
+
+            # Validate that value is yes/no (optional - be permissive)
+            if norm_value in ["yes", "no"]:
+                categorical[norm_key] = norm_value
+            else:
+                # If not yes/no, still include it (be permissive for other habit values)
+                categorical[norm_key] = norm_value
+
+    return categorical
+
+
 def transform_constraint_object(new_constraints: Dict) -> Dict:
     """
     Transform NEW constraint object to OLD format.
 
-    NEW:
+    NEW (from GLOBAL_REFERENCE_CONTEXT.md prompt):
     {
-        "categorical": {...},
-        "min": {"capacity": [{"type": "memory", "value": 16, "unit": "gb"}]},
+        "identity": [{"type": "skill", "value": "cooking"}],
+        "lifestyle": [{"type": "diet", "value": "vegetarian"}],
+        "habits": {"smoking": "no", "drinking": "no"},
+        "min": {"time": [{"type": "experience", "value": 36, "unit": "month"}]},
         "max": {"cost": [{"type": "price", "value": 50000, "unit": "inr"}]},
         "range": {}
     }
 
-    OLD:
+    OLD (for matching engine):
     {
-        "categorical": {...},
-        "min": {"memory": 16},
+        "categorical": {"skill": "cooking", "diet": "vegetarian", "smoking": "no", "drinking": "no"},
+        "min": {"experience": 36},
         "max": {"price": 50000},
         "range": {}
     }
@@ -300,10 +398,27 @@ def transform_constraint_object(new_constraints: Dict) -> Dict:
             "range": {}
         }
 
-    # Get each mode (categorical stays same, min/max/range need flattening)
-    categorical = new_constraints.get("categorical", {})
+    # Build categorical from multiple sources
+    categorical = {}
 
-    # Flatten axis-based constraints
+    # 1. Extract from identity array
+    identity_list = new_constraints.get("identity", [])
+    lifestyle_list = new_constraints.get("lifestyle", [])
+    identity_lifestyle_categorical = flatten_identity_lifestyle_to_categorical(identity_list, lifestyle_list)
+    categorical.update(identity_lifestyle_categorical)
+
+    # 2. Extract from habits dict
+    habits_dict = new_constraints.get("habits", {})
+    habits_categorical = flatten_habits_to_categorical(habits_dict)
+    categorical.update(habits_categorical)
+
+    # 3. Add any existing categorical field (for backward compatibility)
+    existing_categorical = new_constraints.get("categorical", {})
+    if isinstance(existing_categorical, dict):
+        for key, value in existing_categorical.items():
+            categorical[normalize_string(key)] = normalize_string(value)
+
+    # Flatten axis-based constraints (min/max/range)
     min_axis = new_constraints.get("min", {})
     max_axis = new_constraints.get("max", {})
     range_axis = new_constraints.get("range", {})
@@ -326,7 +441,7 @@ def transform_constraint_object(new_constraints: Dict) -> Dict:
         range_flat = range_axis if isinstance(range_axis, dict) else {}
 
     return {
-        "categorical": categorical if isinstance(categorical, dict) else {},
+        "categorical": categorical,
         "min": min_flat,
         "max": max_flat,
         "range": range_flat

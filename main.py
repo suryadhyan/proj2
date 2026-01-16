@@ -32,7 +32,7 @@ init_error = None
 # Load extraction prompt
 def load_extraction_prompt():
     """Load the extraction prompt from file."""
-    prompt_path = os.path.join(os.path.dirname(__file__), "prompt", "PROMPT_STAGE2.txt")
+    prompt_path = os.path.join(os.path.dirname(__file__), "prompt", "PROMPT_STAGE2 copy.txt")
     try:
         with open(prompt_path, "r", encoding="utf-8") as f:
             return f.read()
@@ -261,7 +261,7 @@ def extract_from_query(query: str) -> Dict[str, Any]:
     if not extraction_prompt:
         raise HTTPException(
             status_code=500,
-            detail="Extraction prompt not loaded. Check prompt/PROMPT_STAGE2.txt exists."
+            detail="Extraction prompt not loaded. Check prompt/PROMPT_STAGE2 copy.txt exists."
         )
 
     try:

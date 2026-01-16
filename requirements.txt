@@ -1,9 +1,9 @@
 fastapi
-uvicorn
+uvicorn[standard]
 supabase
 qdrant-client
-sentence-transformers
 python-dotenv
 pydantic
 numpy
 openai
+sentence-transformers

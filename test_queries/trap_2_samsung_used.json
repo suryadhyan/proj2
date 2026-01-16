@@ -1,0 +1,62 @@
+{
+  "intent": "product",
+  "subintent": "sell",
+  "domain": [
+    "technology & electronics"
+  ],
+  "items": [
+    {
+      "type": "smartphone",
+      "categorical": {
+        "brand": "samsung",
+        "condition": "used"
+      },
+      "min": {},
+      "max": {},
+      "range": {
+        "capacity": [
+          {
+            "type": "storage",
+            "min": 256,
+            "max": 256,
+            "unit": "gb"
+          }
+        ],
+        "cost": [
+          {
+            "type": "price",
+            "min": 35000,
+            "max": 35000,
+            "unit": "inr"
+          }
+        ]
+      }
+    }
+  ],
+  "other_party_preferences": {
+    "categorical": {},
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "self_attributes": {
+    "categorical": {
+      "language": "hindi"
+    },
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "target_location": {
+    "mode": "explicit",
+    "name": "mumbai",
+    "coordinates": null
+  },
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for product/sell - trap_2_samsung_used"
+}

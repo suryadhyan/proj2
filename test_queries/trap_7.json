@@ -1,0 +1,12 @@
+{
+  "query": "I am a 28 year old male looking for a roommate in Bangalore, I am vegetarian and non-smoker",
+  "user_id": "trap-user-7",
+  "description": "TRAP 7: Should NOT match Target 2 (gender: male vs female)",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - trap_7"
+}

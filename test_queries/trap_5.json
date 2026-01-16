@@ -1,0 +1,12 @@
+{
+  "query": "I want to buy a used iPhone in Mumbai, prefer a seller who speaks Tamil",
+  "user_id": "trap-user-5",
+  "description": "TRAP 5: Should NOT match Match 1 (language: Tamil vs Hindi)",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - trap_5"
+}

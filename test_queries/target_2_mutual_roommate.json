@@ -1,0 +1,40 @@
+{
+  "intent": "mutual",
+  "subintent": "connect",
+  "items": [],
+  "other_party_preferences": {
+    "categorical": {
+      "gender": "female",
+      "smoking": "no",
+      "pets": "no"
+    },
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "self_attributes": {
+    "categorical": {
+      "gender": "female",
+      "smoking": "no",
+      "occupation": "working professional"
+    },
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "target_location": {
+    "mode": "explicit",
+    "name": "bangalore",
+    "coordinates": null
+  },
+  "primary_mutual_category": [
+    "roommates"
+  ],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for mutual/roommate - target_2_mutual_roommate",
+  "domain": []
+}

@@ -1,0 +1,61 @@
+{
+  "intent": "product",
+  "subintent": "buy",
+  "domain": [
+    "technology & electronics"
+  ],
+  "items": [
+    {
+      "type": "smartphone",
+      "categorical": {
+        "brand": "apple",
+        "condition": "used"
+      },
+      "min": {
+        "capacity": [
+          {
+            "type": "storage",
+            "value": 128,
+            "unit": "gb"
+          }
+        ]
+      },
+      "max": {
+        "cost": [
+          {
+            "type": "price",
+            "value": 50000,
+            "unit": "inr"
+          }
+        ]
+      },
+      "range": {}
+    }
+  ],
+  "other_party_preferences": {
+    "categorical": {
+      "language": "hindi"
+    },
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "self_attributes": {
+    "categorical": {},
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "target_location": {
+    "mode": "explicit",
+    "name": "mumbai",
+    "coordinates": null
+  },
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for product/buy - target_1_product_buyer"
+}

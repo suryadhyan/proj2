@@ -38,9 +38,11 @@ from embedding_builder import build_embedding_text
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 
-# Qdrant
-QDRANT_HOST = os.environ.get("QDRANT_HOST", "localhost")
-QDRANT_PORT = int(os.environ.get("QDRANT_PORT", "6333"))
+# Qdrant (Cloud or Local)
+QDRANT_ENDPOINT = os.environ.get("QDRANT_ENDPOINT")  # Cloud endpoint
+QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")    # Cloud API key
+QDRANT_HOST = os.environ.get("QDRANT_HOST", "localhost")  # Local fallback
+QDRANT_PORT = int(os.environ.get("QDRANT_PORT", "6333"))  # Local fallback
 
 # Embedding model
 # Default to a smaller model for safety in cloud environments (avoid OOM)
@@ -76,9 +78,15 @@ class IngestionClients:
         self.supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
         print(f"✓ Connected to Supabase: {SUPABASE_URL}")
 
-        # Qdrant
-        self.qdrant = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
-        print(f"✓ Connected to Qdrant: {QDRANT_HOST}:{QDRANT_PORT}")
+        # Qdrant (Cloud or Local)
+        if QDRANT_ENDPOINT and QDRANT_API_KEY:
+            # Use Qdrant Cloud
+            self.qdrant = QdrantClient(url=QDRANT_ENDPOINT, api_key=QDRANT_API_KEY)
+            print(f"✓ Connected to Qdrant Cloud: {QDRANT_ENDPOINT}")
+        else:
+            # Use local Qdrant
+            self.qdrant = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
+            print(f"✓ Connected to Qdrant (local): {QDRANT_HOST}:{QDRANT_PORT}")
 
         # Embedding model
         print(f"Loading embedding model: {EMBEDDING_MODEL}...")

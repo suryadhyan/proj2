@@ -1,0 +1,12 @@
+{
+  "query": "Selling my used iPhone 13 with 64GB storage in Mumbai, I speak Hindi",
+  "user_id": "trap-user-6",
+  "description": "TRAP 6: Should NOT match if Target 1 requires min 128GB storage",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - trap_6"
+}

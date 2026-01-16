@@ -1,0 +1,12 @@
+{
+  "query": "Selling my used iPhone 13 in Mumbai for 80000 rupees, I speak Hindi",
+  "user_id": "trap-user-3",
+  "description": "TRAP 3: Should NOT match Target 1 if price constraint added (price too high for used phone)",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - trap_3"
+}

@@ -1,0 +1,62 @@
+{
+  "intent": "product",
+  "subintent": "sell",
+  "domain": [
+    "technology & electronics"
+  ],
+  "primary_mutual_category": [],
+  "items": [
+    {
+      "type": "smartphone",
+      "categorical": {
+        "brand": "apple",
+        "condition": "used"
+      },
+      "min": {},
+      "max": {},
+      "range": {
+        "capacity": [
+          {
+            "type": "storage",
+            "min": 256,
+            "max": 256,
+            "unit": "gb"
+          }
+        ],
+        "cost": [
+          {
+            "type": "price",
+            "min": 45000,
+            "max": 45000,
+            "unit": "inr"
+          }
+        ]
+      }
+    }
+  ],
+  "item_exclusions": [],
+  "other_party_preferences": {
+    "categorical": {},
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "other_party_exclusions": [],
+  "self_attributes": {
+    "categorical": {
+      "language": "hindi"
+    },
+    "min": {},
+    "max": {},
+    "range": {}
+  },
+  "self_exclusions": [],
+  "target_location": {
+    "mode": "explicit",
+    "name": "mumbai",
+    "coordinates": null
+  },
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Selling used Apple iPhone with 256GB storage for 45000 INR in Mumbai, Hindi speaking seller"
+}

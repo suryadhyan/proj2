@@ -1,0 +1,12 @@
+{
+  "query": "Selling my used iPhone 13 in Mumbai, I speak Hindi and English",
+  "user_id": "seller-user-1",
+  "description": "MATCH 1: Should match Target 1 (used iPhone, Mumbai, Hindi speaker)",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - match_1"
+}

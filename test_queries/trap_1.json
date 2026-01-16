@@ -1,0 +1,12 @@
+{
+  "query": "Selling brand new iPhone 13 in Mumbai, I speak Hindi",
+  "user_id": "trap-user-1",
+  "description": "TRAP 1: Should NOT match Target 1 (condition: new vs used)",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - trap_1"
+}

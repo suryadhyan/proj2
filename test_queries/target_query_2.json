@@ -1,0 +1,12 @@
+{
+  "query": "Looking for a female roommate, I am vegetarian and non-smoker, age 25-30, in Bangalore",
+  "user_id": "target-user-2",
+  "description": "TARGET 2: Mutual roommate seeker - should match with Match 2",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - target_query_2"
+}

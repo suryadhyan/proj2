@@ -1,0 +1,12 @@
+{
+  "query": "I want to buy a used iPhone in Mumbai, prefer a seller who speaks Hindi",
+  "user_id": "target-user-1",
+  "description": "TARGET 1: Product buyer - should match with Match 1",
+  "primary_mutual_category": [],
+  "item_exclusions": [],
+  "other_party_exclusions": [],
+  "self_exclusions": [],
+  "location_match_mode": "explicit",
+  "location_exclusions": [],
+  "reasoning": "Test query for unknown/unknown - target_query_1"
+}

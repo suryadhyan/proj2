@@ -1,0 +1,107 @@
+INFO:     Started server process [19380]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+🚀 FastAPI server starting...
+📍 Server should be available on port 8000
+✅ Server startup complete (initialization running in background)
+⏳ Starting background initialization...
+🌍 SUPABASE_URL: SET
+🔑 OPENAI_API_KEY: SET
+📝 Initializing OpenAI client...
+✅ OpenAI client ready
+📄 Loading extraction prompt...
+✅ Extraction prompt loaded (81394 chars)
+🔄 Initializing ingestion clients (in background)...
+✓ Connected to Supabase: https://qhrwkqrtlhgvtupwnpyx.supabase.co
+✓ Connected to Qdrant Cloud: https://bc692c7b-72e0-4947-a251-d14e25783ab3.europe-west3-0.gcp.cloud.qdrant.io
+Loading embedding model: all-MiniLM-L6-v2...
+INFO:     127.0.0.1:52370 - "GET /health HTTP/1.1" 200 OK
+✓ Loaded embedding model: all-MiniLM-L6-v2 (384D)
+✅ Ingestion clients initialized
+🔄 Initializing retrieval clients (in background)...
+✓ Connected to Supabase: https://qhrwkqrtlhgvtupwnpyx.supabase.co
+INFO:     127.0.0.1:52374 - "GET /health HTTP/1.1" 200 OK
+✓ Connected to Qdrant Cloud: https://bc692c7b-72e0-4947-a251-d14e25783ab3.europe-west3-0.gcp.cloud.qdrant.io
+Loading embedding model: all-MiniLM-L6-v2...
+INFO:     127.0.0.1:52378 - "POST /store-listing HTTP/1.1" 503 Service Unavailable
+✓ Loaded embedding model: all-MiniLM-L6-v2
+✅ Retrieval clients initialized
+✅ ALL clients initialized successfully
+INFO:     127.0.0.1:63643 - "GET /health HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-seller-1
+📝 Storing in product_listings...
+✅ Stored in Supabase with listing_id: f5fdc005-a539-4cf2-affa-8d3967640ca2
+🔢 Storing embedding in product_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63645 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-roommate-1
+📝 Storing in mutual_listings...
+✅ Stored in Supabase with listing_id: f568b9a0-3cd8-4c50-9c39-28cf10865c3b
+🔢 Storing embedding in mutual_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63650 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-seller-2
+📝 Storing in product_listings...
+✅ Stored in Supabase with listing_id: 929a26bb-225f-4492-9aae-4990908f75cc
+🔢 Storing embedding in product_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63653 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-seller-3
+📝 Storing in product_listings...
+✅ Stored in Supabase with listing_id: 1df0e2e2-f11f-4a02-b792-0dd5a55fdbd3
+🔢 Storing embedding in product_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63655 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-seller-4
+📝 Storing in product_listings...
+✅ Stored in Supabase with listing_id: 9ddd5e3a-3019-4b57-b678-27c7f13f0465
+🔢 Storing embedding in product_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63657 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-seller-5
+📝 Storing in product_listings...
+✅ Stored in Supabase with listing_id: c73804a1-de1b-4b08-9a85-b1d1395081ee
+🔢 Storing embedding in product_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63659 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-service-1
+📝 Storing in service_listings...
+✅ Stored in Supabase with listing_id: ef3081f3-fb8d-483e-8a91-ce25603e5a51
+🔢 Storing embedding in service_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63661 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-seller-6
+📝 Storing in product_listings...
+✅ Stored in Supabase with listing_id: a77331b0-0f56-48d5-a330-e87a26a0a65a
+🔢 Storing embedding in product_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63664 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-roommate-2
+📝 Storing in mutual_listings...
+✅ Stored in Supabase with listing_id: 9f742b81-6c51-4889-a00a-27cc0a17b3fc
+🔢 Storing embedding in mutual_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63666 - "POST /store-listing HTTP/1.1" 200 OK
+
+💾 Store Listing for user: user-roommate-3
+📝 Storing in mutual_listings...
+✅ Stored in Supabase with listing_id: 7b380ebd-0e70-4f1a-bd91-43aeb1d80838
+🔢 Storing embedding in mutual_vectors...
+✅ Stored in Qdrant
+INFO:     127.0.0.1:63669 - "POST /store-listing HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63671 - "POST /search-and-match-direct HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63678 - "POST /search-and-match-direct HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49161 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49161 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53849 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53849 - "GET /openapi.json HTTP/1.1" 200 OK

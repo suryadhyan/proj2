@@ -105,3 +105,5 @@ INFO:     127.0.0.1:49161 - "GET / HTTP/1.1" 200 OK
 INFO:     127.0.0.1:49161 - "GET /favicon.ico HTTP/1.1" 404 Not Found
 INFO:     127.0.0.1:53849 - "GET /docs HTTP/1.1" 200 OK
 INFO:     127.0.0.1:53849 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55007 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55007 - "GET /openapi.json HTTP/1.1" 200 OK

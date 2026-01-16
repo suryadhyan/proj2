@@ -531,8 +531,8 @@ async def search_and_match_endpoint(request: SearchAndMatchRequest):
             "matched_listing_ids": matched_listing_ids
         }
 
-        print(f"💾 Storing search history in search_matches table...")
-        ingestion_clients.supabase.table("search_matches").insert(matches_data).execute()
+        print(f"💾 Storing search history in matches table...")
+        ingestion_clients.supabase.table("matches").insert(matches_data).execute()
         print(f"✅ Stored with match_id: {match_id}")
 
         return {
